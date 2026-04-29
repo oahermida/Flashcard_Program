@@ -1,0 +1,321 @@
+{
+    "name": "Python Knowledge",
+    "created": "2026-04-29",
+    "cards": [
+        {
+            "id": "card0001",
+            "front": "What does json.load() do, and what does it need?",
+            "back": "Reads a JSON file and returns a Python object (dict, list, etc.). Needs an open file object — use it inside a `with open(...) as f:` block.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0002",
+            "front": "What does json.dump() do, and how is it different from json.dumps()?",
+            "back": "`json.dump(data, f)` writes a Python object to a file. `json.dumps(data)` returns a JSON-formatted string. dump = to file, dumps = to string.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0003",
+            "front": "What is the load-append-save pattern?",
+            "back": "Load the full list from the JSON file into memory, append the new item to the list in memory, then write the whole list back to the file. Never append directly to the file.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0004",
+            "front": "What does `with open(path, 'r') as f:` do?",
+            "back": "Opens a file for reading and binds it to `f`. The file is automatically closed when the `with` block exits — even if an error occurs.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0005",
+            "front": "What file mode do you use to overwrite a file completely?",
+            "back": "`'w'` (write mode). It truncates the file to zero length before writing. Use this when saving the full updated list back to JSON.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0006",
+            "front": "What is a FileNotFoundError and when does it occur?",
+            "back": "Raised when Python tries to open a file that doesn't exist. Catch it with `try/except FileNotFoundError` to handle the first-run case gracefully.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0007",
+            "front": "How do you anchor a file path to the script's location rather than where it's run from?",
+            "back": "Use `Path(__file__).parent` to get the directory the script lives in. Build all paths from there so they work regardless of the working directory.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0008",
+            "front": "What does pathlib.Path.mkdir(parents=True, exist_ok=True) do?",
+            "back": "Creates the directory and any missing parent directories. Does nothing (no error) if the directory already exists. Safe to call every time on startup.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0009",
+            "front": "Why can't you store a Python date object directly in JSON?",
+            "back": "JSON has no date type — only strings, numbers, booleans, null, arrays, and objects. Convert dates to strings with `.isoformat()` before saving, and parse them back with `datetime.date.fromisoformat()` when loading.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0010",
+            "front": "What does datetime.date.today() return?",
+            "back": "A `date` object representing today's date. Call `.isoformat()` on it to get a string like `'2026-04-29'` suitable for JSON storage.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0011",
+            "front": "What is the purpose of the `if __name__ == '__main__':` guard?",
+            "back": "It ensures the code inside only runs when the script is executed directly, not when it's imported as a module. Prevents side effects when other files import from yours.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0012",
+            "front": "What is scope, and why can't you use a variable defined inside a function outside of it?",
+            "back": "Scope is the region of code where a variable exists. Variables created inside a function are local — they exist only during that function call. Use `return` to send a value out.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0013",
+            "front": "What is separation of concerns?",
+            "back": "Each function does one thing. Loading data, saving data, displaying data, and getting user input are separate functions — not tangled together in one block.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0014",
+            "front": "What is the standard pattern for a menu loop in Python?",
+            "back": "`while True:` — print options, get input, use `if/elif` to branch, `break` to exit. Each option calls its own function.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0015",
+            "front": "What is the standard pattern for validating user input?",
+            "back": "`while True:` — prompt inside the loop, wrap in `try/except ValueError` if parsing numbers, `break` only when input is valid. Never trust input to be correct on the first try.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0016",
+            "front": "What does enumerate() do and when do you use it?",
+            "back": "Returns `(index, value)` pairs when iterating over a list. Use it when you need both the position and the item — e.g. displaying a numbered menu.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0017",
+            "front": "What does dict.items() return and how do you use it?",
+            "back": "Returns key-value pairs as tuples. Use `for key, value in my_dict.items():` to iterate over both at once.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0018",
+            "front": "What is a list comprehension and when should you use one?",
+            "back": "`[expression for item in iterable if condition]` — builds a new list in one line. Use when transforming or filtering a list. Don't use when the logic is complex enough to need a loop.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0019",
+            "front": "How do you format strings into aligned columns using f-strings?",
+            "back": "Use width specifiers inside the braces: `f'{value:<20}'` left-aligns in 20 chars, `f'{value:>5}'` right-aligns in 5. Combine them to build table-like output.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0020",
+            "front": "What is a nested dict and when do you use one?",
+            "back": "A dict whose values are themselves dicts. Use when a single entity has multiple attributes — e.g. a card with front, back, id, seen, correct. Each entity is one dict; the collection is a list of those dicts.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0021",
+            "front": "What does random.shuffle() return?",
+            "back": "Nothing — it returns `None`. It shuffles the list in-place. Call it on its own line (`random.shuffle(cards)`), then work with `cards`. Assigning the result to a variable is a common mistake.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0022",
+            "front": "What is the difference between random.choice() and random.choices()?",
+            "back": "`random.choice(list)` picks one item with equal probability. `random.choices(list, weights=[...], k=n)` picks `n` items with weighted probability — items with higher weights are more likely.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0023",
+            "front": "In random.choices(), do the weights need to sum to 1?",
+            "back": "No. Weights are relative, not probabilities. `[4, 2, 1]` means the first item is twice as likely as the second and four times as likely as the third. Python normalises them for you.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0024",
+            "front": "Why store `seen` and `correct` as counts rather than storing the accuracy percentage directly?",
+            "back": "Counts let you recalculate accuracy at any time with full precision. Storing a percentage loses information — you can't recover the raw counts from `0.75`, and each update would compound rounding errors.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0025",
+            "front": "How do you calculate accuracy from seen/correct, and what must you guard against?",
+            "back": "`correct / seen` — but you must guard against `seen == 0` to avoid ZeroDivisionError. Use `correct / seen if seen > 0 else 0` (or a sensible default weight for unseen cards).",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0026",
+            "front": "How do you sort a list of dicts by a computed value?",
+            "back": "`sorted(cards, key=lambda c: c['correct'] / c['seen'] if c['seen'] > 0 else 0)` — the `key` function is called on each item; `sorted` orders by the returned value. Doesn't modify the original list.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0027",
+            "front": "What is datetime.timedelta and what does .days give you?",
+            "back": "`timedelta` is the result of subtracting two `date` objects. `.days` gives the integer number of days between them. Use it to calculate how long since a card was last seen.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0028",
+            "front": "How do you convert an ISO date string back into a date object?",
+            "back": "`datetime.date.fromisoformat('2026-04-29')` returns a `date` object. Use this when loading dates from JSON so you can do date arithmetic on them.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0029",
+            "front": "What does Path.glob('*.json') do?",
+            "back": "Returns all files matching the pattern in that directory as `Path` objects. Use it to list all deck files without hardcoding filenames.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0030",
+            "front": "What does uuid.uuid4() generate and why use [:8]?",
+            "back": "A random 128-bit unique identifier as a string like `'a3f9b2d1-...'`. `[:8]` trims it to the first 8 characters — still unique enough for a small deck, and readable.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0031",
+            "front": "Why does a card need an ID rather than being identified by its position in the list?",
+            "back": "Position changes if you sort, reorder, or delete cards. Two cards can have identical fronts. The ID is stable and unique — it's the only safe way to find and update a specific card.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0032",
+            "front": "What is a pure function?",
+            "back": "A function that only depends on its inputs and has no side effects — it doesn't modify global state, read files, or print. Given the same inputs, it always returns the same output. Easier to test and reason about.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0033",
+            "front": "What is the difference between a parameter and an argument?",
+            "back": "A parameter is the placeholder in the function definition (`def greet(name):`). An argument is the actual value passed when calling it (`greet('Oscar')`). Parameters are filled in by arguments at call time.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0034",
+            "front": "When would you use a set instead of a list?",
+            "back": "When you need to eliminate duplicates or check membership fast (`in` is O(1) for sets, O(n) for lists). Sets are unordered — use a list when order matters or duplicates are allowed.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        },
+        {
+            "id": "card0035",
+            "front": "What does str.strip() do?",
+            "back": "Removes leading and trailing whitespace (spaces, tabs, newlines) from a string. Call it on user input before storing or comparing to avoid invisible mismatches.",
+            "created": "2026-04-29",
+            "seen": 0,
+            "correct": 0,
+            "last_seen": null
+        }
+    ]
+}
