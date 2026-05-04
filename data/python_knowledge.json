@@ -5,7 +5,7 @@
         {
             "id": "card0001",
             "front": "What does json.load() do, and what does it need?",
-            "back": "Reads a JSON file and returns a Python object (dict, list, etc.). Needs an open file object — use it inside a `with open(...) as f:` block.",
+            "back": "Reads a JSON file and returns a Python object (dict, list, etc.). Needs an open file object \u2014 use it inside a `with open(...) as f:` block.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -32,7 +32,7 @@
         {
             "id": "card0004",
             "front": "What does `with open(path, 'r') as f:` do?",
-            "back": "Opens a file for reading and binds it to `f`. The file is automatically closed when the `with` block exits — even if an error occurs.",
+            "back": "Opens a file for reading and binds it to `f`. The file is automatically closed when the `with` block exits \u2014 even if an error occurs.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -77,7 +77,7 @@
         {
             "id": "card0009",
             "front": "Why can't you store a Python date object directly in JSON?",
-            "back": "JSON has no date type — only strings, numbers, booleans, null, arrays, and objects. Convert dates to strings with `.isoformat()` before saving, and parse them back with `datetime.date.fromisoformat()` when loading.",
+            "back": "JSON has no date type \u2014 only strings, numbers, booleans, null, arrays, and objects. Convert dates to strings with `.isoformat()` before saving, and parse them back with `datetime.date.fromisoformat()` when loading.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -104,7 +104,7 @@
         {
             "id": "card0012",
             "front": "What is scope, and why can't you use a variable defined inside a function outside of it?",
-            "back": "Scope is the region of code where a variable exists. Variables created inside a function are local — they exist only during that function call. Use `return` to send a value out.",
+            "back": "Scope is the region of code where a variable exists. Variables created inside a function are local \u2014 they exist only during that function call. Use `return` to send a value out.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -113,7 +113,7 @@
         {
             "id": "card0013",
             "front": "What is separation of concerns?",
-            "back": "Each function does one thing. Loading data, saving data, displaying data, and getting user input are separate functions — not tangled together in one block.",
+            "back": "Each function does one thing. Loading data, saving data, displaying data, and getting user input are separate functions \u2014 not tangled together in one block.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -122,7 +122,7 @@
         {
             "id": "card0014",
             "front": "What is the standard pattern for a menu loop in Python?",
-            "back": "`while True:` — print options, get input, use `if/elif` to branch, `break` to exit. Each option calls its own function.",
+            "back": "`while True:` \u2014 print options, get input, use `if/elif` to branch, `break` to exit. Each option calls its own function.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -131,7 +131,7 @@
         {
             "id": "card0015",
             "front": "What is the standard pattern for validating user input?",
-            "back": "`while True:` — prompt inside the loop, wrap in `try/except ValueError` if parsing numbers, `break` only when input is valid. Never trust input to be correct on the first try.",
+            "back": "`while True:` \u2014 prompt inside the loop, wrap in `try/except ValueError` if parsing numbers, `break` only when input is valid. Never trust input to be correct on the first try.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -140,7 +140,7 @@
         {
             "id": "card0016",
             "front": "What does enumerate() do and when do you use it?",
-            "back": "Returns `(index, value)` pairs when iterating over a list. Use it when you need both the position and the item — e.g. displaying a numbered menu.",
+            "back": "Returns `(index, value)` pairs when iterating over a list. Use it when you need both the position and the item \u2014 e.g. displaying a numbered menu.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -158,7 +158,7 @@
         {
             "id": "card0018",
             "front": "What is a list comprehension and when should you use one?",
-            "back": "`[expression for item in iterable if condition]` — builds a new list in one line. Use when transforming or filtering a list. Don't use when the logic is complex enough to need a loop.",
+            "back": "`[expression for item in iterable if condition]` \u2014 builds a new list in one line. Use when transforming or filtering a list. Don't use when the logic is complex enough to need a loop.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -176,7 +176,7 @@
         {
             "id": "card0020",
             "front": "What is a nested dict and when do you use one?",
-            "back": "A dict whose values are themselves dicts. Use when a single entity has multiple attributes — e.g. a card with front, back, id, seen, correct. Each entity is one dict; the collection is a list of those dicts.",
+            "back": "A dict whose values are themselves dicts. Use when a single entity has multiple attributes \u2014 e.g. a card with front, back, id, seen, correct. Each entity is one dict; the collection is a list of those dicts.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -185,7 +185,7 @@
         {
             "id": "card0021",
             "front": "What does random.shuffle() return?",
-            "back": "Nothing — it returns `None`. It shuffles the list in-place. Call it on its own line (`random.shuffle(cards)`), then work with `cards`. Assigning the result to a variable is a common mistake.",
+            "back": "Nothing \u2014 it returns `None`. It shuffles the list in-place. Call it on its own line (`random.shuffle(cards)`), then work with `cards`. Assigning the result to a variable is a common mistake.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -194,7 +194,7 @@
         {
             "id": "card0022",
             "front": "What is the difference between random.choice() and random.choices()?",
-            "back": "`random.choice(list)` picks one item with equal probability. `random.choices(list, weights=[...], k=n)` picks `n` items with weighted probability — items with higher weights are more likely.",
+            "back": "`random.choice(list)` picks one item with equal probability. `random.choices(list, weights=[...], k=n)` picks `n` items with weighted probability \u2014 items with higher weights are more likely.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -212,7 +212,7 @@
         {
             "id": "card0024",
             "front": "Why store `seen` and `correct` as counts rather than storing the accuracy percentage directly?",
-            "back": "Counts let you recalculate accuracy at any time with full precision. Storing a percentage loses information — you can't recover the raw counts from `0.75`, and each update would compound rounding errors.",
+            "back": "Counts let you recalculate accuracy at any time with full precision. Storing a percentage loses information \u2014 you can't recover the raw counts from `0.75`, and each update would compound rounding errors.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -221,7 +221,7 @@
         {
             "id": "card0025",
             "front": "How do you calculate accuracy from seen/correct, and what must you guard against?",
-            "back": "`correct / seen` — but you must guard against `seen == 0` to avoid ZeroDivisionError. Use `correct / seen if seen > 0 else 0` (or a sensible default weight for unseen cards).",
+            "back": "`correct / seen` \u2014 but you must guard against `seen == 0` to avoid ZeroDivisionError. Use `correct / seen if seen > 0 else 0` (or a sensible default weight for unseen cards).",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -230,7 +230,7 @@
         {
             "id": "card0026",
             "front": "How do you sort a list of dicts by a computed value?",
-            "back": "`sorted(cards, key=lambda c: c['correct'] / c['seen'] if c['seen'] > 0 else 0)` — the `key` function is called on each item; `sorted` orders by the returned value. Doesn't modify the original list.",
+            "back": "`sorted(cards, key=lambda c: c['correct'] / c['seen'] if c['seen'] > 0 else 0)` \u2014 the `key` function is called on each item; `sorted` orders by the returned value. Doesn't modify the original list.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -266,7 +266,7 @@
         {
             "id": "card0030",
             "front": "What does uuid.uuid4() generate and why use [:8]?",
-            "back": "A random 128-bit unique identifier as a string like `'a3f9b2d1-...'`. `[:8]` trims it to the first 8 characters — still unique enough for a small deck, and readable.",
+            "back": "A random 128-bit unique identifier as a string like `'a3f9b2d1-...'`. `[:8]` trims it to the first 8 characters \u2014 still unique enough for a small deck, and readable.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -275,7 +275,7 @@
         {
             "id": "card0031",
             "front": "Why does a card need an ID rather than being identified by its position in the list?",
-            "back": "Position changes if you sort, reorder, or delete cards. Two cards can have identical fronts. The ID is stable and unique — it's the only safe way to find and update a specific card.",
+            "back": "Position changes if you sort, reorder, or delete cards. Two cards can have identical fronts. The ID is stable and unique \u2014 it's the only safe way to find and update a specific card.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -284,7 +284,7 @@
         {
             "id": "card0032",
             "front": "What is a pure function?",
-            "back": "A function that only depends on its inputs and has no side effects — it doesn't modify global state, read files, or print. Given the same inputs, it always returns the same output. Easier to test and reason about.",
+            "back": "A function that only depends on its inputs and has no side effects \u2014 it doesn't modify global state, read files, or print. Given the same inputs, it always returns the same output. Easier to test and reason about.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
@@ -302,7 +302,7 @@
         {
             "id": "card0034",
             "front": "When would you use a set instead of a list?",
-            "back": "When you need to eliminate duplicates or check membership fast (`in` is O(1) for sets, O(n) for lists). Sets are unordered — use a list when order matters or duplicates are allowed.",
+            "back": "When you need to eliminate duplicates or check membership fast (`in` is O(1) for sets, O(n) for lists). Sets are unordered \u2014 use a list when order matters or duplicates are allowed.",
             "created": "2026-04-29",
             "seen": 0,
             "correct": 0,
