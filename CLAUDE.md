@@ -111,7 +111,7 @@ Planned multi-file structure (from Phase 7 — Polish & Refactor):
 
 ## Current Progress
 
-**Phase 1 not yet started.**
+**Archived 2026-05-08. Phases 1–5 complete. Phases 6–9 not started.**
 
 **Concepts covered in prior projects (no need to re-explain):**
 - Dicts and nested dicts as data structures
