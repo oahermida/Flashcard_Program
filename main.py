@@ -77,16 +77,22 @@ def main():
             break
 
 def quiz_loop(deck, path):
-    random.shuffle(deck["cards"])
+    cards = list(deck["cards"])
+    weights = build_weights(cards)
+
     session_correct = 0
     session_total = 0
-    for card in deck["cards"]:
+    while cards:
+        card = random.choices(cards, weights=weights, k=1)[0]
         print(card["front"])
         input("Press ENTER to flip...")
         print(card["back"])
         choice = get_valid_input("Did you get it right?\n1. Yes\n2. No\n", 1, 2)
         card["last_seen"] = datetime.date.today().isoformat()
         card["seen"] += 1
+        idx = cards.index(card)
+        cards.pop(idx)
+        weights.pop(idx)
         session_total += 1
         if choice == 1:
             session_correct += 1
@@ -135,6 +141,22 @@ def review_weak(deck, path):
     print(f"You got {session_correct}/{session_total} correct.")
     save_deck(path, deck)
 
+def build_weights(cards):
+    weights = []
+
+    for card in cards:
+        if card["seen"] == 0:
+            weights.append(2)
+        elif card["seen"] > 0 and card["correct"] == 0:
+            weights.append(4)
+        elif card["seen"] > 0 and card["correct"] > 0:
+            if card["last_seen"] is None:
+                days_since = 30
+            else:
+                last_seen_date = datetime.date.fromisoformat(card["last_seen"])
+                days_since = (datetime.date.today() - last_seen_date).days
+            weights.append((1/get_accuracy(card)) * (days_since + 1))
+    return weights
 
 if __name__ == "__main__":
     main()
